@@ -7,15 +7,19 @@ def hill_climb(env, num_states, num_actions, num_episodes):
     best_weight = torch.rand(num_states, num_actions)
     total_rewards = []
     eta = 0.01              # Noise scaling parameter
+    scale = 2
     for episode in range(num_episodes):
         weight = best_weight + torch.rand(num_states, num_actions) * eta         # Change 2
         reward = run_episode(env, weight)
         if episode % 20 == 19 or reward > best_reward:
             print(f"Episode: {episode + 1} \t Total reward: {reward}")
-        if reward > best_reward:
+        if reward >= best_reward:
             best_reward = reward
             best_weight = weight
-        total_rewards.append(reward)
+            eta = max(eta / scale, 1e-4)
+        else:
+            eta = min(eta * scale, scale)
+            total_rewards.append(reward)
     return best_reward, best_weight, total_rewards
 
 if __name__ == "__main__":
