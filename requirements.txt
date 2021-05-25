@@ -39,6 +39,7 @@ torch==1.8.1
 torchaudio==0.8.1
 torchvision==0.9.1
 tornado @ file:///C:/ci/tornado_1606942392901/work
+tqdm==4.61.0
 traitlets @ file:///home/ktietz/src/ci/traitlets_1611929699868/work
 typing-extensions @ file:///home/ktietz/src/ci_mi/typing_extensions_1612808209620/work
 wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
