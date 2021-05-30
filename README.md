@@ -28,7 +28,7 @@ Small projects to delve into reinforcement learning. Following Sutton & Barto's 
 10. Find the optimal policy of Windy GridWorld, a similar environment to Cliff Walking but with additional wind displacement. **SARSA** worked great here, with Q-learning showing similar results. 
 11. For the taxicab problem 3 methods were tried:
    - Q-Learning converged with a relatively high error rate, as could be seen in the graphs. Grid search will probably reduce error even further. My attempts did not result in significant improvement even after stepwise <img src="https://render.githubusercontent.com/render/math?math=\alpha"> reductions after 400 episodes and increasing episode lengths.
-   - SARSA had similar problems, but to a lesser extent. and grid search resulted in an average increase in reward of +12.
+   - SARSA had similar problems, but to a lesser extent. Grid search resulted in an average increase in reward of +12.
    - **Double Q-Learning** worked far better than Q-Learning as it did not overestimate action values as much. However, this method tended to somewhat underestimate action values, and so converged more slowly. Nonetheless, episode rewards converged better than Q-Learning (but SARSA + Grid Search still outperformed). These methods depend greatly on hyperparameter selection.
      
      
