@@ -3,6 +3,8 @@ import gym
 from collections import defaultdict
 from tqdm import tqdm
 from pprint import pprint
+
+# If this import does not work, add an MC. to it.
 from blackjack_helper import plot_blackjack_values
 
 def run_episode(env, hold_score):

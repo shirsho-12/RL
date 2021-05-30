@@ -2,7 +2,8 @@ import torch
 import gym
 from collections import defaultdict
 from tqdm import tqdm
-from MC.blackjack_helper import plot_blackjack_values, compare_scores
+# If this import does not work, add an MC. to it.
+from blackjack_helper import plot_blackjack_values, compare_scores
 
 
 def run_eps_episode(env, Q, epsilon, num_actions):
