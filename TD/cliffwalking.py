@@ -15,4 +15,4 @@ epsilon = 0.1
 behaviour_policy = gen_eps_greedy_policy(env.action_space.n, epsilon)
 optimal_Q, optimal_policy, info = q_learning(env, behaviour_policy, gamma, num_episodes, alpha)
 print("\nQ-Learning Optimal policy: \n", optimal_policy)
-plot_rate(info["length"], info["rewards"], "GridWorld: Q-Learning")
+plot_rate(info["length"], info["rewards"], "Cliff Walking: Q-Learning")
