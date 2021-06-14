@@ -1,4 +1,4 @@
-atari-py==1.2.2
+atari-py
 backcall @ file:///home/ktietz/src/ci/backcall_1611930011877/work
 Box2D==2.3.10
 box2d-py==2.3.8
