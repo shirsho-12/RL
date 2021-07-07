@@ -31,4 +31,8 @@ Small projects to delve into reinforcement learning. Following Sutton & Barto's 
    - SARSA had similar problems, but to a lesser extent. Grid search resulted in an average increase in reward of +12.
    - **Double Q-Learning** worked far better than Q-Learning as it did not overestimate action values as much. However, this method tended to somewhat underestimate action values, and so converged more slowly. Nonetheless, episode rewards converged better than Q-Learning (but SARSA + Grid Search still outperformed). These methods depend greatly on hyperparameter selection.
      
-     
+### Multi-Arm Bandits (6 July 2021)
+12. Solve multi-arm bandit (slot machines with probabilistic rewards) problems using random, <img src="https://render.githubusercontent.com/render/math?math=\epsilon">-greedy, and softmax policies. Here, the <img src="https://render.githubusercontent.com/render/math?math=\epsilon">-greedy policy converged the fastest.
+13. Solve a simplified webpage ad placement problem using **Upper Confidence Interval (UCB)** and **Thompson Sampling**. In this case, *contextual bandits* (one bandit leading to another) were used. This increased the information and complexity of the problem.
+
+### Function Approximation
