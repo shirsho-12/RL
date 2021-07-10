@@ -35,4 +35,6 @@ Small projects to delve into reinforcement learning. Following Sutton & Barto's 
 12. Solve multi-arm bandit (slot machines with probabilistic rewards) problems using random, <img src="https://render.githubusercontent.com/render/math?math=\epsilon">-greedy, and softmax policies. Here, the <img src="https://render.githubusercontent.com/render/math?math=\epsilon">-greedy policy converged the fastest.
 13. Solve a simplified webpage ad placement problem using **Upper Confidence Interval (UCB)** and **Thompson Sampling**. In this case, *contextual bandits* (one bandit leading to another) were used. This increased the information and complexity of the problem.
 
-### Function Approximation
+### Function Approximation (10 July 2021)
+14. Estimate Q-values using linear equations, reducing the dimensionality of the problem. These linear equations are first solved using a fully connected layer `nn.Linear`. This is then improved into a shallow neural network with `nn.Sequential` and ReLU non-linearities `nn.ReLU()`. 
+15. Approximate Q-values are then used to solve continuous state environments like the CartPole and MountainCar environments. An improvement on Q-learning is done using experience replay. Experience replay improves learning by randomly choosing a number of states to learn from instead of the entire episode. 
