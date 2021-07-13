@@ -22,7 +22,7 @@ def q_learning(env, estimator, num_episodes, gamma = 1.0, epsilon = 0.1, eps_dec
     total_reward_episode = [0] * num_episodes # For graphing
 
     for episode in tqdm(range(num_episodes)):
-        policy = gen_eps_greedy_policy(estimator, epsilon * eps_decay ** episode, env.action_space.n)
+        policy = gen_eps_greedy_policy(estimator, epsilon, env.action_space.n)
         state = env.reset()
         is_done = False
         while not is_done:
@@ -33,6 +33,7 @@ def q_learning(env, estimator, num_episodes, gamma = 1.0, epsilon = 0.1, eps_dec
             estimator.update(state, action, td_target)
             state = next_state
             total_reward_episode[episode] += reward
+        epsilon *= eps_decay
     return total_reward_episode
 
 
@@ -43,7 +44,7 @@ def exp_q_learning(env, estimator, num_episodes, replay_size, gamma=1.0, epsilon
     total_reward_episode = [0] * num_episodes # For graphing
 
     for episode in tqdm(range(num_episodes)):
-        policy = gen_eps_greedy_policy(estimator, epsilon * eps_decay ** episode, env.action_space.n)
+        policy = gen_eps_greedy_policy(estimator, epsilon, env.action_space.n)
         state = env.reset()
         is_done = False
         while not is_done:
@@ -55,9 +56,10 @@ def exp_q_learning(env, estimator, num_episodes, replay_size, gamma=1.0, epsilon
             memo.append((state, action, td_target))
             state = next_state
             total_reward_episode[episode] += reward
-
+        
         replay_data = random.sample(memo, min(replay_size, len(memo)))
         for state, action, td_target in replay_data:
             estimator.update(state, action, td_target)
+        epsilon *= eps_decay
 
     return total_reward_episode
